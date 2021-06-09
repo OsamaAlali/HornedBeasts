@@ -19,7 +19,7 @@ class HornedBeast extends React.Component{
           vote: newVal +=1,
           
         })
-       this.props.funMain(this.props.title,this.props.imgurl,this.props.descrption)
+       this.props.funMain(this.props)
        
     }
      
@@ -38,7 +38,7 @@ class HornedBeast extends React.Component{
 
     {/* the Below Code is to render card */}
                   <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={this.props.imgurl} />
+            <Card.Img variant="top" src={this.props.img_url} />
                <Card.Body>
                  <Card.Title>{this.props.title}</Card.Title>
                    <Card.Text>

@@ -1,6 +1,6 @@
 import React from 'react'
 import HornedBeast from './HornedBeast'
-import dataarr from '../Data.json'
+// import dataarr from '../Data.json'
 
 class Main extends React.Component{
 
@@ -15,13 +15,13 @@ class Main extends React.Component{
         <main>
 
          {
-         dataarr.map((item)=>{
+         this.props.hornedbeast.map((item)=>{
           return(<HornedBeast 
             funMain={this.props.fun}
             updateData={this.props.updateData}
             title={item.title}
             descrption={item.description}
-            imgurl={item.image_url}
+            img_url={item.image_url}
            altimg={item.altimg}
             />
 

@@ -3,12 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
 export class SelectedBeast extends Component {
-    
-    constructor(props){
-     super(props)
-    
-    
-}
+ 
 
 
 
@@ -20,12 +15,12 @@ export class SelectedBeast extends Component {
                  
                  <Modal show={this.props.show} onHide={this.props.close}>
         <Modal.Header closeButton>
-          <Modal.Title>{this.props.title}</Modal.Title>
+          <Modal.Title>{this.props.pervprops.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body> <Card.Img variant="top" src={this.props.img} /> </Modal.Body>
+        <Modal.Body> <Card.Img variant="top" src={this.props.pervprops.img_url} /> </Modal.Body>
         <Modal.Footer>
         <Card.Text>
-                 descrption:{this.props.descrption}
+                 descrption:{this.props.pervprops.descrption}
                 </Card.Text>
           <Button variant="secondary" onClick={this.props.close}>
             Close
