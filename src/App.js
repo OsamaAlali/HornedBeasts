@@ -8,14 +8,17 @@ import Data from './Data.json'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import SelectedBeast from './components/SelectedBeast';
+import SelectHoner from './components/SelectHoner';
 
 class App extends React.Component{
    constructor(props){
      super(props)
  this.state={
    show: false, 
-   preprops:''
- }
+   preprops: [],
+ idHoner: null,
+ selectHonerFlag: false
+  }
 
   }
   changeClose=() =>{
@@ -30,7 +33,21 @@ class App extends React.Component{
     
       })
  } 
+setIdhoner=(id)=>{
+this.setState({
+idHoner: id
+})
+}
 
+
+displayImgByHoner =()=>{
+ const honresArray=Data.filter((item)=>(item.horns === this.state.idHoner) );
+  this.setState({
+    selectHonerFlag: true,
+    preprops: honresArray
+
+  },)
+}
   
   render(){
     return (
@@ -40,8 +57,18 @@ class App extends React.Component{
        pervprops={this.state.preprops}
        close={this.changeClose}
        /> 
-      <Header  />
-       <Main fun={this.changeStatus} hornedbeast={Data} />   
+      <Header   />
+      <SelectHoner 
+      setIdhoner={this.setIdhoner}
+      displayImgByHoner={this.displayImgByHoner}
+      />
+
+    {  (this.state.selectHonerFlag)?  <Main fun={this.changeStatus} hornedbeast={this.state.preprops} />  :   <Main fun={this.changeStatus} hornedbeast={Data} />  }
+       
+         
+       
+
+
       <Footer />
       </>
     )
