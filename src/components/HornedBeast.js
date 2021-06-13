@@ -45,7 +45,7 @@ class HornedBeast extends React.Component{
                  {this.props.descrption}
                 </Card.Text>
                 <Card.Text>
-                 Vote:{this.state.vote}
+                &#10084;&#65039;:{this.state.vote}
                 </Card.Text>
                     <Button variant="primary" onClick={this.incmVote}>Show me</Button>
   </Card.Body>
